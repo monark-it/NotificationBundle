@@ -14,8 +14,9 @@ namespace MIT\Bundle\NotificationBundle\Tests\Model;
 use MIT\Bundle\NotificationBundle\Entity\NotifiableEntityTrait;
 use MIT\Bundle\NotificationBundle\Notification\NotifiableInterface;
 use MIT\Bundle\NotificationBundle\Notification\Notification;
+use PHPUnit\Framework\TestCase;
 
-class NotifiableTest extends \PHPUnit_Framework_TestCase
+class NotifiableTest extends TestCase
 {
     public function testNotify()
     {

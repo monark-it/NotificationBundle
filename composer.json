@@ -1,16 +1,32 @@
 {
     "name": "multiinfo/notification-bundle",
-    "description": "MIT User Bundle",
-    "type": "Symfony Bundle",
-    "license": "Proprietary",
+    "description": "MIT Notification Bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
     "authors": [
         {
             "name": "MIT",
-            "email": "mit@mit.co.ma"
+            "email": "med.ahamada@mit-agency.com"
         }
     ],
-    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "MIT\\Bundle\\NotificationBundle\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MIT\\Bundle\\NotificationBundle\\Tests\\": "/Tests/"
+        }
+    },
     "require": {
-        "symfony/symfony": "^2.8|^3.0"
+        "php": "^5.6 || ^7.0",
+        "symfony/symfony": "^2.8||^3.0||^4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.35|^5.7.11|^6.5"
     }
 }
