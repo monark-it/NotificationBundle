@@ -1,0 +1,21 @@
+services:
+    mit_notification.notifier:
+        class: MIT\Bundle\NotificationBundle\Notifier\Notifier
+        arguments: ["@event_dispatcher", "@mit_notification.notification_sender"]
+
+    mit_notification.notification_sender:
+        class: MIT\Bundle\NotificationBundle\Sender\NotificationSender
+        arguments: ['@service_container']
+
+    mit_notification.sms_driver:
+        class: MIT\Bundle\NotificationBundle\Sender\Driver\Gammu
+        arguments: ['%gammu_host%', '%gammu_email%', '%gammu_password%']
+
+    mit_notification.mail_driver:
+        class: MIT\Bundle\NotificationBundle\Sender\Driver\Mail
+        arguments: ['@mailer']
+
+    mit_notification.database_driver:
+        class: MIT\Bundle\NotificationBundle\Sender\Driver\Database
+        arguments: ['@doctrine.orm.entity_manager']
+
